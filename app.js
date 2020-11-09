@@ -5,14 +5,14 @@ while (!maxNum) {
 
 const targetNum = Math.floor(Math.random() * maxNum) + 1;
 
-console.log(targetNum);
-
 let guess = parseInt(prompt('enter first guess'));
+let attempts = 1;
 while (guess !== targetNum) {
+    attempts++;
     if (guess > targetNum) {
         guess = parseInt(prompt('Too High! Try again:'));
     } else {
         guess = parseInt(prompt('Too Low! Try again:'));
     }
 }
-console.log("you're winner!")
+console.log(`You're winner! But it took you ${attempts} attempts`)
