@@ -7,12 +7,17 @@ const targetNum = Math.floor(Math.random() * maxNum) + 1;
 
 let guess = parseInt(prompt('enter first guess'));
 let attempts = 1;
-while (guess !== targetNum) {
+while (parseInt(guess) !== targetNum) {
+    if (guess === 'q') break;
     attempts++;
     if (guess > targetNum) {
-        guess = parseInt(prompt('Too High! Try again:'));
+        guess = prompt('Too High! Try again:');
     } else {
-        guess = parseInt(prompt('Too Low! Try again:'));
+        guess = prompt('Too Low! Try again:');
     }
 }
-console.log(`You're winner! But it took you ${attempts} attempts`)
+if(guess === 'q') {
+    console.log(`Quitting after ${attempts} attempts`)
+} else {
+    console.log(`You're winner! But it took you ${attempts} attempts`)
+}
