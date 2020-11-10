@@ -3,6 +3,7 @@ while(!topNum) {
     topNum = parseInt(prompt('Please enter a valid number'));
 }
 const numRandom = Math.floor(Math.random() * topNum) + 1;
+console.log(numRandom);
 let guess = parseInt(prompt('What is the secret number?')),
     count = 1;
 while (parseInt(guess) !== numRandom) {
@@ -13,4 +14,9 @@ while (parseInt(guess) !== numRandom) {
     } else {
         guess = prompt('Too small, try again');
     }
+}
+if (guess === 'q') {
+    console.log("You've quit.")
+} else {
+    console.log(`You're winner!!! Number of attemts ${count}`)
 }
