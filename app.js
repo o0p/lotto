@@ -1,23 +1,27 @@
-let maxNum = parseInt(prompt('enter max number'));
-while (!maxNum) {
-    maxNum = parseInt(prompt('enter a valid number'));
-}
+let numRange = parseInt(prompt('How high?'));
+let count = 1;
 
-const targetNum = Math.floor(Math.random() * maxNum) + 1;
+const numLucky = Math.floor(Math.random() * numRange) + 1;
+console.log(numLucky);
+while (!numRange){
+    numRange = parseInt(prompt('Error, enter number'));
+    console.log(numLucky);
 
-let guess = parseInt(prompt('enter first guess'));
-let attempts = 1;
-while (parseInt(guess) !== targetNum) {
-    if (guess === 'q') break;
-    attempts++;
-    if (guess > targetNum) {
-        guess = prompt('Too High! Try again:');
-    } else {
-        guess = prompt('Too Low! Try again:');
-    }
 }
-if(guess === 'q') {
-    console.log(`Quitting after ${attempts} attempts`)
+let = guess    = parseInt(prompt('Wassup homie?'));
+
+
+
+
+while(parseInt(guess) !== numLucky) {
+    if (guess === "q") {break};
+    count++;
+    if (parseInt(guess) > numLucky) {
+    guess = prompt('Too damn high dawg!');
 } else {
-    console.log(`You're winner! But it took you ${attempts} attempts`)
+    guess = prompt('Not high enough homie!');
 }
+
+
+}
+console.log(`Victory! Number of trys: ${count}`)
