@@ -1,24 +1,22 @@
-let numRange = parseInt(prompt('How high?')),
-    guess    = parseInt(prompt('Wassup homie?'));
-
+let numRange = parseInt(prompt('How high?'));
 const randomizer = Math.floor(Math.random() * numRange) + 1;
-console.log(randomizer);
-
-
 while (!numRange){
     numRange = parseInt(prompt('Error'));
 }
+let = guess    = parseInt(prompt('Wassup homie?'));
+
+console.log(randomizer);
+
+
 
 while(parseInt(guess) !== randomizer) {
-    
-    if( guess == NaN){
-        console.log('errRRRRRRR');
-        console.log(guess);
 
-    }
     if (parseInt(guess) > randomizer) {
-    guess = prompt('Too damn high dawg!');
+    guess = parseInt(prompt('Too damn high dawg!'));
 } else {
-    guess = prompt('Not hight enough homie!');
+    guess = parseInt(prompt('Not high enough homie!'));
 }
+
+
 }
+console.log('Ok, 2221you won')
