@@ -1,2 +1,7 @@
 let numRange = parseInt(prompt('How high?'));
-console.log
+
+while(!numRange){
+    numRange = parseInt(prompt('Error'));
+}
+
+console.log(numRange);
