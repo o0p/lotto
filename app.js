@@ -1,27 +1,19 @@
-let numRange = parseInt(prompt('How high?'));
-let count = 1;
+let ceilingNum = parseInt(prompt('Select the largest number to guess'));
+    while (!ceilingNum) {
+        ceilingNum = parseInt(prompt('This is not a number. Please enter a number.'))
+    }
+const randomNum = Math.floor(Math.random() * ceilingNum) + 1;
+    console.log(randomNum);
+let numberOfnumImputs = 1;
+let numImput = parseInt(prompt('Guess the secertt number'));
 
-const numLucky = Math.floor(Math.random() * numRange) + 1;
-console.log(numLucky);
-while (!numRange){
-    numRange = parseInt(prompt('Error, enter number'));
-    console.log(numLucky);
-
+while (parseInt(numImput) !== randomNum) {
+    if (numImput === 'q') break;
+    numberOfnumImputs++;
+    if (numImput > randomNum) {
+        numImput = prompt('Too high, try again:')
+    } else {
+        numImput = prompt('Too low, try again:')
+    }
 }
-let = guess    = parseInt(prompt('Wassup homie?'));
-
-
-
-
-while(parseInt(guess) !== numLucky) {
-    if (guess === "q") {break};
-    count++;
-    if (parseInt(guess) > numLucky) {
-    guess = prompt('Too damn high dawg!');
-} else {
-    guess = prompt('Not high enough homie!');
-}
-
-
-}
-console.log(`Victory! Number of trys: ${count}`)
+console.log(`Success, number of attempts ${numberOfnumImputs}`)
