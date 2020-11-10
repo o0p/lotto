@@ -1,19 +1,22 @@
-let ceilingNum = parseInt(prompt('Select the largest number to guess'));
-    while (!ceilingNum) {
-        ceilingNum = parseInt(prompt('This is not a number. Please enter a number.'))
-    }
-const randomNum = Math.floor(Math.random() * ceilingNum) + 1;
-    console.log(randomNum);
-let numberOfnumImputs = 1;
-let numImput = parseInt(prompt('Guess the secertt number'));
-
-while (parseInt(numImput) !== randomNum) {
-    if (numImput === 'q') break;
-    numberOfnumImputs++;
-    if (numImput > randomNum) {
-        numImput = prompt('Too high, try again:')
+let topNum = parseInt(prompt('Enter the largest possible number'));
+while(!topNum) {
+    topNum = parseInt(prompt('Please enter a valid number'));
+}
+const numRandom = Math.floor(Math.random() * topNum) + 1;
+console.log(numRandom);
+let guess = parseInt(prompt('What is the secret number?')),
+    count = 1;
+while (parseInt(guess) !== numRandom) {
+    if (guess === 'q') break;
+    count++;
+    if (guess > numRandom) {
+        guess = prompt('Too large, try again:');
     } else {
-        numImput = prompt('Too low, try again:')
+        guess = prompt('Too small, try again');
     }
 }
-console.log(`Success, number of attempts ${numberOfnumImputs}`)
+if (guess === 'q') {
+    console.log("You've quit.")
+} else {
+    console.log(`You're winner!!! Number of attemts ${count}`)
+}
