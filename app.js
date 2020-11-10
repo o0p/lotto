@@ -4,16 +4,16 @@ let ceilingNum = parseInt(prompt('Select the largest number to guess'));
     }
 const randomNum = Math.floor(Math.random() * ceilingNum) + 1;
     console.log(randomNum);
-let numberOfnumImputs = 1;
-let numImput = parseInt(prompt('Guess the secertt number'));
+let attemptCounter = 1;
+let attempt = parseInt(prompt('Guess the secertt number'));
 
-while (parseInt(numImput) !== randomNum) {
-    if (numImput === 'q') break;
-    numberOfnumImputs++;
-    if (numImput > randomNum) {
-        numImput = prompt('Too high, try again:')
+while (parseInt(attempt) !== randomNum) {
+    if (attempt === 'q') break;
+    attemptCounter++;
+    if (attempt > randomNum) {
+        attempt = prompt('Too high, try again:')
     } else {
-        numImput = prompt('Too low, try again:')
+        attempt = prompt('Too low, try again:')
     }
 }
-console.log(`Success, number of attempts ${numberOfnumImputs}`)
+console.log(`Success, number of attempts ${attemptCounter}`)
